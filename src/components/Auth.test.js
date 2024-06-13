@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -12,7 +11,6 @@ test('should render authentication status and checkbox', () => {
     </AuthProvider>
   );
 
-  // Check if the p element with class authText is in the document
   const authText = screen.getByText(/You are not authenticated/i);
   expect(authText).toBeInTheDocument();
 
