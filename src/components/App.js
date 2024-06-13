@@ -1,13 +1,13 @@
+import React from 'react';
+import './App.css';
+import Auth from './Auth';
 
-import React from "react";
-import './../styles/App.css';
-
-const App = () => {
+function App() {
   return (
-    <div>
-        {/* Do not remove the main div */}
+    <div className="App">
+      <Auth />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
