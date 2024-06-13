@@ -1,20 +1,15 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
+import { AuthContext } from './path-to-auth-context';
 
-export const AuthContext = createContext({
-  isAuthenticated: false,
-  toggleAuth: () => {}
-});
-
-export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const toggleAuth = () => {
-    setIsAuthenticated(prevAuth => !prevAuth);
-  };
+const YourComponent = () => {
+  const { isAuthenticated, toggleAuthentication } = React.useContext(AuthContext);
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, toggleAuth }}>
-      {children}
-    </AuthContext.Provider>
+    <div>
+      <p>{isAuthenticated ? 'You are now authenticated' : 'You are not authenticated'}</p>
+      <input type="checkbox" onChange={toggleAuthentication} />
+    </div>
   );
-};
+}
+
+export default YourComponent;
