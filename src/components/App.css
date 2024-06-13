@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+label {
+  font-size: 1.2em;
+  display: block;
+  margin-top: 20px;
+}
